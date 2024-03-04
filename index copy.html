@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en" class=" g-resizer-v3-init">
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why the Year of Dragon brings baby boom?</title>
+  <link rel="icon" href="logo.jpg">
+  <link rel="stylesheet" href="bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="css2" rel="stylesheet">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="">
+  <meta property="og:url" content="https://github.com/thomastaoli/dragon-baby/">
+  <meta property="og:image" content="https://github.com/thomastaoli/dragon-baby/header2.jpg">
+  <meta property="og:description"
+    content="While the long lasting superstition in many Chinese communities considers the coming new year as an auspicious time to be born, the subject becomes particularly critical now as many countries look to reverse their abysmal birth rates. However, the sudden increase in births is likely to overwhelm medical and educational resources.">
+  <meta property="article:author" content="Thomas Li">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.innerWidth <= 650) {
+        const visualizations = document.querySelectorAll('.visualization');
+        let startX;
+
+        visualizations.forEach(function (visualization) {
+          visualization.addEventListener('touchstart', function (e) {
+            startX = e.changedTouches[0].clientX;
+          });
+
+          visualization.addEventListener('touchend', function (e) {
+            const endX = e.changedTouches[0].clientX;
+            const deltaX = startX - endX;
+
+            if (deltaX > 50) {
+              visualization.parentElement.scrollLeft += 200;
+            } else if (deltaX < -50) {
+              visualization.parentElement.scrollLeft -= 200;
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+  <style>
+    #g-plot-Artboard_1,
+    #g-plot-Artboard_2,
+    #g-plt4_svg-Artboard_1,
+    #g-plt4_svg-Artboard_2 {
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+      #g-plot-Artboard_2 {
+        display: block;
+      }
+
+      #g-plt4_svg-Artboard_2 {
+        display: block;
+      }
+
+      center {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .title,
+      .subtitle {
+        font-size: smaller;
+        /* Adjust font size */
+        padding: 5px;
+        /* Add some padding */
+      }
+    }
+
+    @media screen and (min-width: 650px) {
+      #g-plot-Artboard_1 {
+        display: block;
+      }
+
+      #g-plt4_svg-Artboard_1 {
+        display: block;
+      }
+
+      center {
+        display: none;
+      }
+    }
+
+    .container {
+      max-width: 800px !important;
+      color: #000000;
+      font-family: Georgia;
+    }
+
+    img {
+      display: block;
+      width: 1000px;
+      margin: 0 auto;
+      transition: 0.3s;
+    }
+
+    a {
+      color: deepskyblue;
+    }
+
+    p {
+      margin-bottom: 1.5em;
+      font-size: 18px;
+      font-family: Georgia;
+      color: #000000;
+    }
+
+    .portrait {
+      float: left;
+      /* Position the portrait to the left */
+      width: 80px;
+      /* Adjust the width as needed */
+      height: 80px;
+      /* Adjust the height as needed */
+      border-radius: 50%;
+      /* Make the portrait round */
+      margin-right: 15px;
+      /* Add some space between the portrait and the text */
+      object-fit: cover;
+      /* Ensure the image covers the area without distortion */
+    }
+
+    .byline,
+    .date {
+      line-height: 80px;
+      /* Adjust the line height to align with the height of the portrait */
+      margin: 0;
+      /* Adjust margin as needed */
+    }
+
+    .graph-title {
+      font-family: Arial;
+      font-weight: 600;
+      font-size: 24px;
+      color: #000000;
+      padding: auto;
+    }
+
+    .graph-subtitle {
+      font-family: Arial;
+      font-weight: 600;
+      font-size: 16px;
+      padding: auto;
+    }
+
+    h1.title {
+      /* Existing title styles */
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+      margin-top: 0.8rem;
+      font-weight: 800;
+      color: white;
+      text-decoration: underline;
+      max-width: 800px;
+      text-align: left;
+      /* Ensure the text is left-aligned */
+      padding-left: 15px;
+      /* Add some padding to the left */
+
+      /* Adding gray text shadow */
+      text-shadow: 0px 0px 10px gray;
+    }
+
+    h1.title span {
+      background-color: rgba(128, 128, 128, 0.5);
+      /* 50% transparent gray */
+      padding: 0 1.3rem 0.3rem;
+      -webkit-box-decoration-break: clone;
+      -ms-box-decoration-break: clone;
+      -o-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    h2.subtitle {
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding-top: 40px;
+      max-width: 1000px;
+      padding-left: 25px;
+      text-shadow: 2px 2px 4px gray;
+      /* Corrected text-shadow property */
+    }
+
+    h2.subtitle span {
+      background-color: rgba(128, 128, 128, 0.5);
+      /* 50% transparent gray */
+      color: white;
+      padding: 0 1.3rem 0.3rem;
+      -webkit-box-decoration-break: clone;
+      -ms-box-decoration-break: clone;
+      -o-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    .header-caption {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 1rem;
+      color: white;
+      text-shadow: 0px 0px 5px black;
+      font-style: italic;
+      z-index: 2;
+    }
+
+    .has-bg-img {
+      background: url('header.jpg');
+      center center;
+      background-size: cover;
+    }
+
+    .hero {
+      position: relative;
+      /* Added relative positioning */
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background: url('header.jpg') center center / cover no-repeat;
+    }
+
+    .byline {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 16px;
+    }
+
+    .bottomleft {
+      position: absolute;
+      bottom: 8px;
+      left: 16px;
+      font-size: 18px;
+      color: white;
+
+      font-size: 12px;
+    }
+
+
+
+    .date {
+      font-size: 14px;
+      padding-top: 5px;
+      padding-bottom: 15px;
+
+    }
+
+    .row-container {
+      display: flex;
+      flex-direction: row;
+      max-width: 960px;
+      margin: 0 auto;
+      gap: 2em;
+    }
+
+    .column-container {
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 1;
+    }
+
+    @media (max-width: 800px) {
+      .row-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 40vh;
+        /* Adjusted height for mobile devices */
+      }
+
+      .header-caption {
+        right: 10px;
+        /* Less offset from the right on smaller screens */
+        bottom: 5px;
+        /* Less offset from the bottom to fit the smaller hero height */
+        font-size: 0.8rem;
+      }
+    }
+
+    .video-background {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      /* Ensure video stays in the background */
+      background-size: cover;
+    }
+
+    .content {
+      overflow: hidden;
+      /* Clear the float */
+    }
+
+    .hero-body {
+      text-align: left;
+      /* Center the text */
+      width: 100%;
+    }
+
+    @media (max-width: 650px) {
+      #g-template-mobile {
+        display: block;
+      }
+
+      #g-template-laptop,
+      #g-template-medium {
+        display: none;
+      }
+
+      /* Replace the header background image with header-mobile.jpg */
+      .hero.has-bg-img {
+        background-image: url('header-mobile.jpg') !important;
+      }
+    }
+
+    @media (min-width: 651px) and (max-width: 960px) {
+      #g-template-laptop {
+        display: block;
+      }
+
+      #g-template-mobile,
+      #g-template-medium {
+        display: none;
+      }
+    }
+
+    @media (min-width: 961px) {
+      #g-template-medium {
+        display: block;
+      }
+
+      #g-template-mobile,
+      #g-template-laptop {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 961px) {
+      #g-template-box {
+        width: 100%;
+        /* Adjust the width as needed */
+        height: auto;
+        /* Allow the height to adjust based on content */
+        max-width: 100%;
+        /* Ensure it doesn't exceed the viewport width */
+      }
+    }
+
+    @media (max-width: 650px) {
+      h1.title {
+        font-size: 1.5rem;
+        /* Adjust the font size for h1 on mobile */
+        padding-left: 5px;
+        /* Adjust the left padding */
+        text-shadow: 0px 0px 5px gray;
+      }
+
+      h2.subtitle {
+        font-size: 0.8rem;
+        /* Adjust the font size for h2 on mobile */
+        padding-left: 20px;
+        /* Adjust the left padding */
+        padding-top: 20px;
+        /* Adjust the top padding */
+        text-shadow: 0px 0px 5px gray;
+      }
+    }
+
+    .grid-container {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .grid-container-2 {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .visualization {
+      display: inline-block;
+      width: 100%;
+      /* Adjust width as needed */
+    }
+
+    @media (min-width: 650px) {
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(200px, 1fr));
+        /* Adjust the min and max width as needed */
+        grid-gap: 20px;
+        /* Adjust the gap between grid items */
+        max-width: 1600px;
+        /* Set the maximum width of the container */
+        margin: 0 auto;
+        /* Center the container horizontally */
+        padding: 0 20px;
+        /* Add padding to the container */
+      }
+    }
+
+    @media (min-width: 650px) {
+      .grid-container-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        /* Adjust the min and max width as needed */
+        grid-gap: 20px;
+        /* Adjust the gap between grid items */
+        max-width: 1000px;
+        /* Set the maximum width of the container */
+        margin: 0 auto;
+        /* Center the container horizontally */
+        padding: 0 20px;
+        /* Add padding to the container */
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <section class="hero has-bg-img">
+    <div class="hero-body">
+      <h1 class="title"><span>In the Big Apple 🗽, it's sometimes really hard to find a fresh apple 🍎: How the city's
+          low-income neighborhoods are plagued by food deserts</span></h1>
+      <h2 class="subtitle">While city's policymakers grapple with the stark realities of food deserts, local
+        communities in the low-income neighborhoods face the daily struggle of accessing fresh, healthy, and
+        affordable food, amidst rising health concerns and slow-moving government initiatives.<span></span></h2>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <img src="portrait.jpeg" class="portrait" alt="Thomas Li"> <!-- Add your portrait here -->
+
+        <div class="byline"><b>By <a href="www.linkedin.com/in/thomas-tao-li">Thomas Li</a></b></div>
+
+        <div class="date">Mar 4, 2024</div>
+        <p>New York is the Big Apple. But hundreds of thousands of New Yorkers may not be able to find a fresh apple in
+          the neighborhood they live.</p>
+        <p>Many low-income areas within the city, typically predominantly Black and Hispanic neighborhoods, lack access
+          to large grocery stores offering fresh, healthy, and affordable food options. As a result, residents often
+          rely on bodegas and small grocery stores, which primarily stock processed foods.</p>
+        <p>“Coming to the middle of the Bronx I realized that I literally live in a food desert,” said local resident
+          Roxie Martinez. “There's no health food options around me, the supermarkets are full of GMO foods, fruits are
+          huge and not appealing to look at.”</p>
+        <p>The city officials promised - and had promised for many times - to solve the problem. The Food Retail
+          Expansion to Support Health (“FRESH”) program launched in 2009 aims to open more greengrocers citywide. 30
+          stores - according to Department of City Planning's <a
+            href="https://www.nyc.gov/assets/planning/download/pdf/plans-studies/fresh2/fresh-report-feb2023.pdf">latest
+            report</a> - had been added to NYC since then.</p>
+        <p>However, progress has been slow. Many neighborhoods, including those incentivized under the FRESH program,
+          still lack access to grocery retail chains. This persistent problem is particularly evident in neighborhoods
+          such as Central Bronx and Southeast Brooklyn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Generated by ai2html v0.120.0 - 2024-03-03 19:44 -->
+  <!-- ai file: template.ai -->
+  <style media="screen,print">
+    #g-template-box,
+    #g-template-box .g-artboard {
+      margin: 0 auto;
+    }
+
+    #g-template-box p {
+      margin: 0;
+    }
+
+    #g-template-box .g-aiAbs {
+      position: absolute;
+    }
+
+    #g-template-box .g-aiImg {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 100% !important;
+    }
+
+    #g-template-box .g-aiSymbol {
+      position: absolute;
+      box-sizing: border-box;
+    }
+
+    #g-template-box .g-aiPointText p {
+      white-space: nowrap;
+    }
+
+    #g-template-medium {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #g-template-medium p {
+      font-family: Avenir;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 10px;
+      height: auto;
+      opacity: 1;
+      letter-spacing: 0em;
+      font-size: 8px;
+      text-align: left;
+      color: rgb(255, 0, 0);
+      text-transform: none;
+      padding-bottom: 0;
+      padding-top: 0;
+      mix-blend-mode: normal;
+      position: static;
+    }
+
+    #g-template-medium .g-pstyle0 {
+      font-weight: 900;
+      font-style: Black;
+      line-height: 19px;
+      height: 19px;
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+    }
+
+    #g-template-medium .g-pstyle1 {
+      font-weight: 300;
+      font-style: Light;
+      line-height: 11px;
+      height: 11px;
+      font-size: 10px;
+      color: rgb(0, 0, 0);
+    }
+
+    #g-template-medium .g-pstyle2 {
+      font-style: Roman;
+      height: 10px;
+    }
+
+    #g-template-laptop {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #g-template-laptop p {
+      font-family: Avenir;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 8px;
+      height: auto;
+      opacity: 1;
+      letter-spacing: 0em;
+      font-size: 6px;
+      text-align: left;
+      color: rgb(255, 0, 0);
+      text-transform: none;
+      padding-bottom: 0;
+      padding-top: 0;
+      mix-blend-mode: normal;
+      position: static;
+    }
+
+    #g-template-laptop .g-pstyle0 {
+      font-weight: 900;
+      font-style: Black;
+      line-height: 16px;
+      height: 16px;
+      font-size: 13px;
+      color: rgb(0, 0, 0);
+    }
+
+    #g-template-laptop .g-pstyle1 {
+      font-weight: 300;
+      font-style: Light;
+      line-height: 9px;
+      height: 9px;
+      font-size: 8px;
+      color: rgb(0, 0, 0);
+    }
+
+    #g-template-laptop .g-pstyle2 {
+      font-style: Roman;
+      height: 8px;
+    }
+
+    #g-template-mobile {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #g-template-mobile p {
+      font-family: Avenir;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 8px;
+      height: auto;
+      opacity: 1;
+      letter-spacing: 0em;
+      font-size: 6px;
+      text-align: left;
+      color: rgb(255, 0, 0);
+      text-transform: none;
+      padding-bottom: 0;
+      padding-top: 0;
+      mix-blend-mode: normal;
+      position: static;
+    }
+
+    #g-template-mobile .g-pstyle0 {
+      font-weight: 900;
+      font-style: Black;
+      line-height: 19px;
+      height: 19px;
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+    }
+
+    #g-template-mobile .g-pstyle1 {
+      font-weight: 300;
+      font-style: Light;
+      line-height: 12px;
+      height: 12px;
+      font-size: 10px;
+      color: rgb(0, 0, 0);
+    }
+
+    #g-template-mobile .g-pstyle2 {
+      font-style: Roman;
+      height: 8px;
+    }
+
+    #g-template-mobile .g-pstyle3 {
+      font-weight: 800;
+      font-style: Heavy;
+      line-height: 12px;
+      height: 12px;
+      font-size: 10px;
+      color: rgb(153, 153, 153);
+    }
+  </style>
+
+  <div id="g-template-box" class="ai2html">
+
+    <!-- Artboard: medium -->
+    <div id="g-template-medium" class="g-artboard" style="width:620px; height:425px;" data-aspect-ratio="1.459"
+      data-min-width="620">
+      <div style=""></div>
+      <img id="g-template-medium-img" class="g-template-medium-img g-aiImg" alt="" src="template-medium.jpg" />
+      <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:4.2325%;margin-top:-12px;left:1.734%;width:509px;">
+        <p class="g-pstyle0">Does &ldquo;Fresh Food Desert&rdquo; still exist in NYC? Unfortunately, yes.</p>
+      </div>
+      <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:7.4751%;margin-top:-5.8px;left:1.9725%;width:359px;">
+        <p class="g-pstyle1">Number of selected* grocery stores with fresh food supply in the neighborhood</p>
+      </div>
+      <div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:20.943%;margin-top:-6px;left:26.6159%;width:139px;">
+        <p class="g-pstyle2">Manhattanville and West Harlem</p>
+      </div>
+      <div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:32.2371%;margin-top:-6px;left:65.0185%;width:117px;">
+        <p class="g-pstyle2">Mott Haven & Hunts Point</p>
+      </div>
+      <div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:44.2371%;margin-top:-6px;left:32.6177%;width:70px;">
+        <p class="g-pstyle2">Hell&rsquo;s Kitchen</p>
+      </div>
+      <div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:53.4136%;margin-top:-6px;left:76.1768%;width:123px;">
+        <p class="g-pstyle2">Jamaica and Queens Village</p>
+      </div>
+      <div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:62.3548%;margin-top:-6px;left:27.4774%;width:70px;">
+        <p class="g-pstyle2">Tompkinsville</p>
+      </div>
+      <div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:89.8842%;margin-top:-6px;left:56.2715%;width:180px;">
+        <p class="g-pstyle2">Sheepshead Bay, Marine Park and Midwood</p>
+      </div>
+    </div>
+
+    <!-- Artboard: laptop -->
+    <div id="g-template-laptop" class="g-artboard" style="width:490px; height:350px;" data-aspect-ratio="1.4"
+      data-min-width="490" data-max-width="619">
+      <div style=""></div>
+      <img id="g-template-laptop-img" class="g-template-laptop-img g-aiImg" alt="" src="template-laptop.jpg" />
+      <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:5.166%;margin-top:-10.1px;left:1.9834%;width:421px;">
+        <p class="g-pstyle0">Does &ldquo;Fresh Food Desert&rdquo; still exist in NYC? Unfortunately, yes.</p>
+      </div>
+      <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:8.2317%;margin-top:-4.8px;left:2.2305%;width:298px;">
+        <p class="g-pstyle1">Number of selected* grocery stores with fresh food supply in the neighborhood</p>
+      </div>
+      <div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:21.7098%;margin-top:-5px;left:26.4997%;width:115px;">
+        <p class="g-pstyle2">Manhattanville and West Harlem</p>
+      </div>
+      <div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:32.567%;margin-top:-5px;left:65.159%;width:97px;">
+        <p class="g-pstyle2">Mott Haven & Hunts Point</p>
+      </div>
+      <div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:44.2813%;margin-top:-5px;left:32.5417%;width:60px;">
+        <p class="g-pstyle2">Hell&rsquo;s Kitchen</p>
+      </div>
+      <div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:53.1384%;margin-top:-5px;left:76.3919%;width:102px;">
+        <p class="g-pstyle2">Jamaica and Queens Village</p>
+      </div>
+      <div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:61.7098%;margin-top:-5px;left:27.3671%;width:60px;">
+        <p class="g-pstyle2">Tompkinsville</p>
+      </div>
+      <div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:88.2813%;margin-top:-5px;left:56.3534%;width:148px;">
+        <p class="g-pstyle2">Sheepshead Bay, Marine Park and Midwood</p>
+      </div>
+    </div>
+
+    <!-- Artboard: mobile -->
+    <div id="g-template-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797"
+      data-min-width="0" data-max-width="489">
+      <div style="padding: 0 0 125.5467% 0;"></div>
+      <img id="g-template-mobile-img" class="g-template-mobile-img g-aiImg" alt="" src="template-mobile.jpg" />
+      <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:6.4971%;margin-top:-21.6px;left:3.1182%;width:366px;">
+        <p class="g-pstyle0">Does &ldquo;Fresh Food Desert&rdquo; still exist in NYC? </p>
+        <p class="g-pstyle0">Unfortunately, yes.</p>
+      </div>
+      <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:11.7927%;margin-top:-6.5px;left:3.1745%;width:375px;">
+        <p class="g-pstyle1">Number of selected* grocery stores with fresh food supply in the neighborhood</p>
+      </div>
+      <div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:23.1488%;margin-top:-5px;left:4.382%;width:60px;">
+        <p class="g-pstyle2">Tompkinsville</p>
+      </div>
+      <div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:32.2437%;margin-top:-8.8px;left:34.4667%;width:69px;">
+        <p class="g-pstyle2">Manhattanvile &</p>
+        <p class="g-pstyle2">West Harlem</p>
+      </div>
+      <div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:40.3535%;margin-top:-5px;left:76.3589%;width:97px;">
+        <p class="g-pstyle2">Mott Haven & Hunts Point</p>
+      </div>
+      <div id="g-ai2-6" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:48.3092%;margin-top:-7.4px;left:15.3404%;width:83px;">
+        <p class="g-pstyle3">Staten Island</p>
+      </div>
+      <div id="g-ai2-7" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:57.9831%;margin-top:-5px;left:23.8982%;width:60px;">
+        <p class="g-pstyle2">Hell&rsquo;s Kitchen</p>
+      </div>
+      <div id="g-ai2-8" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:90.0562%;margin-top:-5px;left:76.5372%;width:102px;">
+        <p class="g-pstyle2">Jamaica and Queens Village</p>
+      </div>
+      <div id="g-ai2-9" class="g-ai2html-settings g-aiAbs g-aiPointText"
+        style="top:96.6407%;margin-top:-5px;left:6.7659%;width:148px;">
+        <p class="g-pstyle2">Sheepshead Bay, Marine Park and Midwood</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- End ai2html - 2024-03-03 19:44 -->
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <p>Bringing fresh food to these neighborhoods presents considerable challenges. Many of these food deserts also
+          grapple with high poverty and crime rates. While Whole Foods ventured into central Harlem with its first
+          branch in 2017, this decision, initially viewed as somewhat perplexing, seems more difficult to replicate in
+          the Bronx, as the borough's median income was 37% lower than the citywide average in 2021.</p>
+        <p>Furthermore, the closure of some retail outlets has exacerbated the situation. In October 2023, Target
+          announced the closure of its East Harlem store, the only branch of the big-box chain in the neighborhood,
+          attributing to the excessive theft losses. This closure has eliminated an affordable shopping option upon
+          which many local residents once relied.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid-container">
+    <div class="visualization"><img src="tj_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="wfm_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="tg_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="ss_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="ft_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="ct_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="gr_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="fb_f.png" alt="Visualization 1"></div>
+  </div>
+
+  <p style="text-align:center; color:gray;">
+    <italic>Distribution of Major Grocery Chains in NYC</italic>
+  </p>
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <p>The consequences of living in a food desert extend beyond mere inconvenience; they can lead to serious health
+          issues. With limited access to fresh and nutritious foods, residents are often forced to rely on processed and
+          unhealthy options, contributing to higher rates of diabetes and obesity within these communities.</p>
+        <p>Furthermore, the closure of some retail outlets has exacerbated the situation. In October 2023, Target
+          announced the closure of its East Harlem store, the only branch of the big-box chain in the neighborhood,
+          attributing to the excessive theft losses. This closure has eliminated an affordable shopping option upon
+          which many local residents once relied.</p>
+        <p>The consequences of living in a food desert extend beyond mere inconvenience; they can lead to serious health
+          issues. With limited access to fresh and nutritious foods, residents are often forced to rely on processed and
+          unhealthy options, contributing to higher rates of diabetes and obesity within these communities.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid-container-2">
+    <div class="visualization"><img src="freshveg_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="sugar_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="ob_f.png" alt="Visualization 1"></div>
+    <div class="visualization"><img src="db_f.png" alt="Visualization 1"></div>
+  </div>
+
+  <p style="text-align:center; color:gray;">
+    <italic>Distribution of NYC health data. Note that highlighted areas are under city's FRESH program to solve food
+      desert problem.</italic>
+  </p>
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <p>Meanwhile, experts suggest alternative solutions. Urban study researcher and community organizer Adi Segal
+          emphasizes the pivotal role of grassroots initiatives in combating food desert challenges, by prioritizing
+          public nutrition education and supporting initiatives such as community gardens and farmers' markets - which
+          has potential to transform these food deserts into thriving, healthy communities.</p>
+        <p>"Empowering local communities is key to sustainable solutions," Segal stated in his study. “Eventually, the
+          goal is to create a regional food system, which will lower the price of food, improve its quality and reduce
+          our ecological footprint.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <p><strong>Note:</strong></p>
+        <p>Selected grocery stores include: Trader Joe's and Aldi, Whole Foods Market, Target, Stop & Shop, Key Food,
+          Morton Williams, Foodtown, Ctown, Westside Market, Union Market, H Mart, Gristedes, Food Baazar and ShopRite.
+          A total of 469 stores were included in the analysis. The data was collected from store locators in February
+          2024. Please note while fresh food supply is filtered as much as possible during the data collection, the
+          actual situation may vary.
+        </p>
+        <p>The health data was collected from the 2022 Community Health Profiles by New York City
+          Department of Health and Mental Hygiene. Obesity rate is defined as the percentage of adults with a body mass
+          index (BMI) of 30 or higher. </p>
+        <p>You can view the code and all the data used on my <a
+            href="https://github.com/thomastaoli/HK_rice_with_two_sides" target="_blank">Github</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <section class="section">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <p>&copy; Thomas Li</p>
+      <a href="https://thomastaoli.github.io/portfolio.html">Back to my portfolio page</a>
+    </div>
+  </section>
+</body>
+
+</html>

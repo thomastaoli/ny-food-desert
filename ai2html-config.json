@@ -1,0 +1,28 @@
+{
+    "fonts": [
+      {
+        "aifont": "Avenir-Black",
+        "family": "Avenir",
+        "style": "Black",
+        "weight": "900"
+      },
+      {
+        "aifont": "Avenir-Light",
+        "family": "Avenir",
+        "style": "Light",
+        "weight": "300"
+      },
+      {
+        "aifont": "Avenir-Roman",
+        "family": "Avenir",
+        "style": "Roman",
+        "weight": "400"
+      },
+      {
+        "aifont": "Avenir-Heavy",
+        "family": "Avenir",
+        "style": "Heavy",
+        "weight": "800"
+      }
+    ]
+  }
