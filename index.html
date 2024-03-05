@@ -20,31 +20,6 @@
     communities in the low-income neighborhoods face the daily struggle of accessing fresh, healthy, and
     affordable food, amidst rising health concerns and slow-moving government initiatives.">
   <meta property="article:author" content="Thomas Li">
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.innerWidth <= 650) {
-        const visualizations = document.querySelectorAll('.visualization');
-        let startX;
-
-        visualizations.forEach(function (visualization) {
-          visualization.addEventListener('touchstart', function (e) {
-            startX = e.changedTouches[0].clientX;
-          });
-
-          visualization.addEventListener('touchend', function (e) {
-            const endX = e.changedTouches[0].clientX;
-            const deltaX = startX - endX;
-
-            if (deltaX > 50) {
-              visualization.parentElement.scrollLeft += 200;
-            } else if (deltaX < -50) {
-              visualization.parentElement.scrollLeft -= 200;
-            }
-          });
-        });
-      }
-    });
-  </script>
 
   <style>
     #g-plot-Artboard_1,
