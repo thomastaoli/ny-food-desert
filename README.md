@@ -15,7 +15,7 @@ With the time available for this project, I ended up being able to include over 
 Do find out which neighborhoods have the least grocery stores, I downloaded the geojson file of Neighborhood Tabulation Areas (NTA, 2020 version) and ran codes to see how many locations are within each polygon.
 The city also published NTA based lifestyle survey data and geo locations of FRESH program incentive areas (which can be considered as government recognized food desert). I combined both for possible correlation.
 
-## Data Visualization
+## Visualization
 I mostly used DataWrapper for mapping in this project, as it has comprehensive geo database of the city which saved a lot of time. Meanwhile, I also used Illustrator for further processing.
 The highlight of the project is the use ai2html, so that the NYC map fits smaller screens better, as I put Staten Island on the upper left corner.
 
