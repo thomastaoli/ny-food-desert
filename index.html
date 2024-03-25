@@ -162,11 +162,11 @@
     h2.subtitle {
       color: white;
       font-weight: bold;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       padding-top: 40px;
       max-width: 1000px;
       padding-left: 25px;
-      text-shadow: 2px 2px 4px gray;
+      text-shadow: 2px 2px 10px gray;
       /* Corrected text-shadow property */
     }
 
@@ -203,8 +203,8 @@
       /* Added relative positioning */
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      justify-content: center;
+      min-height: 100svh;
       background: url('header.jpg') center center / cover no-repeat;
     }
 
@@ -255,7 +255,7 @@
 
     @media (max-width: 768px) {
       .hero {
-        min-height: 40vh;
+        min-height: 100vh;
         /* Adjusted height for mobile devices */
       }
 
@@ -288,7 +288,6 @@
 
     .hero-body {
       text-align: left;
-      /* Center the text */
       width: 100%;
     }
 
@@ -343,7 +342,7 @@
 
     @media (max-width: 650px) {
       h1.title {
-        font-size: 1.6rem;
+        font-size: 2rem;
         /* Adjust the font size for h1 on mobile */
         padding-left: 5px;
         /* Adjust the left padding */
@@ -357,7 +356,7 @@
         /* Adjust the left padding */
         padding-top: 20px;
         /* Adjust the top padding */
-        text-shadow: 0px 0px 5px gray;
+        text-shadow: 0px 0px 10px gray;
       }
     }
 
@@ -415,12 +414,11 @@
 <body>
 
   <section class="hero has-bg-img">
-    <div class="hero-body">
-      <h1 class="title"><span>In the Big Apple 🗽, it's sometimes hard to find a fresh apple 🍎: How the city's
-          low-income neighborhoods are plagued by food deserts</span></h1>
+    <div class="content">
+      <h1 class="title"><span>In the Big Apple🗽, it's sometimes hard to find a fresh apple🍎</span></h1>
       <h2 class="subtitle">While city's policymakers grapple with the stark realities of food deserts, local
         communities in the low-income neighborhoods face the daily struggle of accessing fresh, healthy, and
-        affordable food, amidst rising health concerns and slow-moving government initiatives.<span></span></h2>
+        affordable food, amidst rising health concerns and slow-moving government initiatives.</h2>
     </div>
   </section>
 
@@ -433,7 +431,7 @@
         <div class="byline"><b>By <a href="www.linkedin.com/in/thomas-tao-li">Thomas Li</a></b></div>
 
         <div class="date">Mar 4, 2024</div>
-        <p>New York is the Big Apple. But hundreds of thousands of New Yorkers may not be able to find a fresh apple in
+        <p>New York City is the Big Apple. But hundreds of thousands of New Yorkers may not be able to find a fresh apple in
           the neighborhood they live.</p>
         <p>Many low-income areas within the city, typically predominantly Black and Hispanic neighborhoods, lack access
           to large grocery stores offering fresh, healthy, and affordable food options. As a result, residents often
